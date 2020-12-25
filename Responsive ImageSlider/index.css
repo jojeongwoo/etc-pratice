@@ -1,0 +1,137 @@
+body, html {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.css-slider-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: table;
+  overflow: hidden;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  z-index: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  transition: transform 1600ms, transform 1600ms;
+  transform: scale(1);
+}
+
+.slide1 {
+  background-image: url(./img/slide2.png);
+  background-size: cover;
+  left: 0;
+}
+
+.slide2 {
+  background-image: url(./img/slide2.png);
+  background-size: cover;
+  left: 100%;
+}
+
+.slide3 {
+  background-image: url(./img/slide1.png);
+  background-size: cover;
+  left: 200%;
+}
+
+.slide4 {
+  background-image: url(./img/slide2.png);
+  background-size: cover;
+  left: 300%;
+}
+
+.slider > div {
+  text-align: center;
+}
+
+.slider h2 {
+  color: white !important;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 65px;
+  margin-top: -30px;
+  opacity: 0;
+  transform: translateX(500px);
+}
+
+.slider .button {
+  color: white;
+  padding: 12px 50px;
+  background: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  opacity: 0;
+  border-radius: 50px;
+  margin-top: -50px;
+  font-size: 15px;
+  line-height: 30px;
+  display: inline-block;
+  transform: translateX(-500px);
+}
+
+.slider h2, 
+.slider .button {
+  transition: opacity 800ms, transform 800ms;
+  transition-delay: 1s;
+}
+
+.slider-pagination {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+.slider-pagination label {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 2px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+}
+
+.slider-radio1:checked ~ .slider {
+  transform: translateX(0%);
+}
+
+.slider-radio2:checked ~ .slider {
+  transform: translateX(-100%);
+}
+
+.slider-radio3:checked ~ .slider {
+  transform: translateX(-200%);
+}
+
+.slider-radio4:checked ~ .slider {
+  transform: translateX(-300%);
+}
+
+.slide-radio1:checked ~ .slide1 h2,
+.slide-radio2:checked ~ .slide2 h2,
+.slide-radio3:checked ~ .slide3 h2,
+.slide-radio4:checked ~ .slide4 h2,
+.slide-radio1:checked ~ .slide1 .button,
+.slide-radio2:checked ~ .slide2 .button,
+.slide-radio3:checked ~ .slide3 .button,
+.slide-radio4:checked ~ .slide4 .button {
+  transform: translateX(0);
+  opacity: 1;
+}

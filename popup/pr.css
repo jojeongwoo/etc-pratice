@@ -1,0 +1,117 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(#E0eafc, #cfdef3);
+  height: 100vh;
+  user-select: none;
+}
+
+.center, .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#click{
+  display: none;
+}
+
+.click-me{
+  display: block;
+  width: 160px;
+  height: 50px;
+  background: #27ae60;
+  border: 1px solid #27ae60;
+  border-radius: 3px;
+  color: white;
+  font-size: 22px;
+  line-height: 50px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.click-me:hover{
+  background:#219150;
+}
+
+.content{
+  opacity: 0;
+  visibility: hidden;
+  width: 400px;
+  height: 350px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  transition: ease-in 0.3s;
+}
+
+#click:checked ~ .content{
+  opacity: 1;
+  visibility: visible;
+}
+
+.header{
+  background: #27ae60;
+  overflow: hidden;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.header h2{
+  color: white;
+  padding-left: 32px;
+  font-weight: normal;
+}
+
+.header .fa-times{
+  color: white;
+  position: absolute;
+  top: 22px;
+  right: 18px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.fa-check{
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #27ae60;
+  color: #27ae60;
+  margin: 30px 0 0 160px;
+  font-size: 50px;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 12px;
+}
+
+p{
+  text-align: center;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.line{
+  height: 1px;
+  background: silver;
+}
+
+.close-btn{
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 3px;
+  border: 1px solid #27ae60;
+  color: #27ae60;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover{
+  color: white;
+  background: #27ae60;
+  border: 1px solid #27ae60;
+  transition: ease-in 0.5s;
+}
